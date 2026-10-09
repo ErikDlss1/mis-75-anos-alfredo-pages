@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 780 1688" aria-hidden="true">
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#192c42"/><stop offset=".56" stop-color="#2b3041"/><stop offset="1" stop-color="#5a3541"/>
+    </linearGradient>
+    <pattern id="fiber" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M3 8h8 M25 16h4 M11 31h5 M32 38h6" stroke="#f0dfc9" stroke-width=".7" opacity=".13"/>
+      <circle cx="19" cy="6" r=".8" fill="#f0dfc9" opacity=".17"/><circle cx="37" cy="25" r=".65" fill="#f0dfc9" opacity=".16"/>
+    </pattern>
+  </defs>
+  <rect width="780" height="1688" fill="url(#night)"/>
+  <rect width="780" height="1688" fill="url(#fiber)" opacity=".52"/>
+  <path d="M62 0V1688" stroke="#bc8c68" stroke-width="1.5" opacity=".45"/>
+  <path d="M70 0V1688" stroke="#f4e6d3" stroke-width="2" opacity=".2"/>
+  <path d="M112 184h554" stroke="#c1936d" stroke-width="1.5" opacity=".62"/>
+  <text x="112" y="145" font-family="Arial, sans-serif" font-size="20" letter-spacing="4.5" fill="#e1c4a4">UNA INVITACIÓN PARA</text>
+  <text x="108" y="317" font-family="Georgia, serif" font-size="124" letter-spacing="-4" fill="#f4e9d8">Alfredo</text>
+  <text x="114" y="373" font-family="Arial, sans-serif" font-size="25" letter-spacing="4" fill="#d6ad88">75 AÑOS · 14 NOVIEMBRE 2026</text>
+  <text x="628" y="456" font-family="Georgia, serif" font-size="230" fill="#f2e4cf" opacity=".07">75</text>
+  <path d="M566 414c53 34 82 70 113 119" fill="none" stroke="#c18e67" stroke-width="2" stroke-dasharray="2 8" opacity=".85"/>
+  <circle cx="681" cy="535" r="6" fill="#c18e67"/>
+  <text x="390" y="1437" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" letter-spacing="3" fill="#f5ead8">TOCA PARA ABRIR</text>
+  <path d="M354 1475h72" stroke="#bd8b65" stroke-width="2"/>
+  <text x="390" y="1564" text-anchor="middle" font-family="Georgia, serif" font-size="27" font-style="italic" fill="#e5c8a7">Piero · Mi Viejo</text>
+  <text x="390" y="1613" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" letter-spacing="2.5" fill="#c9b39b">LA MÚSICA EMPIEZA AL ABRIR</text>
+</svg>

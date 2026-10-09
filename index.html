@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#1b2d43">
+    <meta name="description" content="Acompáñanos a celebrar los 75 años de Alfredo el sábado 14 de noviembre de 2026 en Glück Salón de Eventos.">
+    <title>Mis 75 años · Alfredo</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div id="opening" class="opening" role="dialog" aria-modal="true" aria-label="Invitación cerrada">
+      <div class="opening-artboard" id="opening-artboard">
+        <img class="opening-background" src="./assets/graphics/apertura-fondo.svg" alt="" aria-hidden="true">
+        <img class="envelope-base" src="./assets/graphics/sobre-base.svg" alt="" aria-hidden="true">
+        <img class="envelope-flap" src="./assets/graphics/sobre-solapa.svg" alt="" aria-hidden="true">
+        <img class="envelope-seal" src="./assets/graphics/sobre-sello.svg" alt="" aria-hidden="true">
+        <button id="open-invitation" class="open-target" type="button">
+          <span class="visually-hidden">Abrir la invitación y comenzar la música</span>
+        </button>
+      </div>
+    </div>
+
+    <main id="invitation" class="invitation" aria-hidden="true" inert>
+      <img class="master-art" src="./master-art.svg" alt="" aria-hidden="true" fetchpriority="high">
+
+      <div class="visual-copy" aria-hidden="true">
+        <span class="at sans meta" data-x="43" data-y="90" data-size="18" data-track="4.2">UNA NOCHE PARA CELEBRAR</span>
+        <span class="at sans meta align-end" data-x="737" data-y="90" data-size="18" data-track="2.5">14 · XI · 2026</span>
+        <span class="at sans meta wine" data-x="48" data-y="1043" data-size="25" data-track="5">MIS</span>
+        <span class="at serif title-75" data-x="39" data-y="1294" data-size="252" data-track="-12">75</span>
+        <span class="at sans anos" data-x="363" data-y="1191" data-size="58" data-track="5">AÑOS</span>
+        <span class="at serif alfredo" data-x="359" data-y="1281" data-size="78">Alfredo</span>
+        <span class="at serif italic wine" data-x="363" data-y="1351" data-size="26">Una vida llena de historias</span>
+        <span class="at sans micro" data-x="47" data-y="1490" data-size="15" data-track="3">UNA INVITACIÓN HECHA PARA COMPARTIR</span>
+
+        <span class="at sans date-label" data-x="46" data-y="1665" data-size="24" data-track="3">SÁBADO</span>
+        <span class="at serif date-number" data-x="26" data-y="2040" data-size="370" data-track="-29">14</span>
+        <span class="at sans month" data-x="52" data-y="2131" data-size="27" data-track="2.2">NOVIEMBRE</span>
+        <span class="at serif year" data-x="53" data-y="2202" data-size="54">2026</span>
+        <span class="at sans time-label" data-x="52" data-y="2319" data-size="22" data-track="1.8">A PARTIR DE</span>
+        <span class="at serif event-time" data-x="51" data-y="2405" data-size="58">6:00 p. m.</span>
+        <span class="at sans countdown-label" data-x="49" data-y="2550" data-size="22" data-track="3.4">FALTAN</span>
+        <div class="at countdown" data-x="48" data-y="2640" data-size="59" role="timer" aria-label="Cuenta regresiva para el cumpleaños de Alfredo">
+          <span class="count-unit"><b id="days">—</b><small>días</small></span>
+          <span class="count-unit"><b id="hours">—</b><small>hrs</small></span>
+          <span class="count-unit"><b id="minutes">—</b><small>min</small></span>
+        </div>
+        <span class="at sans calendar-overline" data-x="160" data-y="2764" data-size="19" data-track="1.2">GUARDA LA FECHA</span>
+        <span class="at serif calendar-label" data-x="160" data-y="2799" data-size="24">Añadir al</span>
+        <span class="at serif calendar-label" data-x="160" data-y="2825" data-size="24">calendario</span>
+        <span class="at sans venue-overline" data-x="52" data-y="3315" data-size="22" data-track="3.2">NOS ENCONTRAMOS EN</span>
+        <span class="at serif venue-name" data-x="46" data-y="3460" data-size="96">Glück</span>
+        <span class="at sans venue-type" data-x="53" data-y="3522" data-size="27" data-track="1.4">SALÓN DE EVENTOS</span>
+        <span class="at sans address" data-x="52" data-y="3631" data-size="27">Ciprés 585 · Mactumatza</span>
+        <span class="at sans address" data-x="52" data-y="3677" data-size="27">29057 Tuxtla Gutiérrez</span>
+        <span class="at sans address" data-x="52" data-y="3723" data-size="27">Chiapas, México</span>
+        <span class="at sans maps-label" data-x="77" data-y="3844" data-size="23" data-track="1.5">ABRIR EN MAPS ↗</span>
+
+        <span class="at sans micro light" data-x="46" data-y="4424" data-size="15" data-track="3">ALFREDO · 75</span>
+        <span class="at serif italic light pause-caption" data-x="46" data-y="5744" data-size="28">Una vida llena de historias.</span>
+
+        <span class="at sans dress-label" data-x="373" data-y="6056" data-size="22" data-track="3">VESTIMENTA</span>
+        <span class="at serif dress-line" data-x="369" data-y="6186" data-size="49">Casual</span>
+        <span class="at serif italic wine dress-line" data-x="369" data-y="6247" data-size="49">elegante</span>
+        <span class="at sans dress-copy" data-x="370" data-y="6361" data-size="32">Ven como te</span>
+        <span class="at sans dress-copy" data-x="370" data-y="6411" data-size="32">sientas bien.</span>
+
+        <span class="at sans gifts-label" data-x="49" data-y="7107" data-size="22" data-track="3">UN DETALLE</span>
+        <span class="at serif gifts-line" data-x="44" data-y="7235" data-size="51">Tu presencia es</span>
+        <span class="at serif italic gifts-line" data-x="44" data-y="7298" data-size="51">lo más importante</span>
+        <span class="at serif gifts-line" data-x="44" data-y="7361" data-size="51">para mí.</span>
+        <span class="at sans gifts-copy" data-x="47" data-y="7476" data-size="30">No hace falta que me</span>
+        <span class="at sans gifts-copy" data-x="47" data-y="7518" data-size="30">traigas un regalo. Si</span>
+        <span class="at sans gifts-copy" data-x="47" data-y="7560" data-size="30">deseas tener un detalle</span>
+        <span class="at sans gifts-copy" data-x="47" data-y="7602" data-size="30">en efectivo, habrá un</span>
+        <span class="at sans gifts-copy" data-x="47" data-y="7644" data-size="30">buzón en la entrada.</span>
+        <span class="at sans rsvp-label" data-x="47" data-y="8165" data-size="21" data-track="2.5">CONFIRMA TU ASISTENCIA</span>
+        <span class="at serif rsvp-title" data-x="44" data-y="8290" data-size="59">¿Vienes?</span>
+        <span class="at sans rsvp-copy" data-x="48" data-y="8401" data-size="28">Confirma antes del</span>
+        <span class="at sans rsvp-copy" data-x="48" data-y="8444" data-size="28">1 de noviembre de 2026.</span>
+        <span class="at sans whatsapp-overline" data-x="133" data-y="8569" data-size="20" data-track=".8">CONFIRMAR POR</span>
+        <span class="at serif whatsapp-label" data-x="133" data-y="8605" data-size="32">WhatsApp</span>
+        <span class="at sans phone" data-x="48" data-y="8707" data-size="28" data-track=".7">+52 961 307 0923</span>
+        <span class="at serif italic song" data-x="48" data-y="8848" data-size="18">Piero · Mi Viejo</span>
+        <span class="at sans music-note" data-x="48" data-y="8934" data-size="19" data-track="1.5">MÚSICA AL ABRIR LA INVITACIÓN</span>
+        <span class="at sans ending-meta" data-x="46" data-y="9092" data-size="19" data-track="1.8">UNA NOCHE · UNA CANCIÓN · MUCHAS HISTORIAS</span>
+
+        <span class="at sans closing-label" data-x="49" data-y="9335" data-size="21" data-track="2.7">HASTA PRONTO</span>
+        <span class="at serif closing-line" data-x="44" data-y="9438" data-size="43">Será un honor</span>
+        <span class="at serif italic closing-line" data-x="44" data-y="9492" data-size="43">compartir esta noche</span>
+        <span class="at serif closing-line" data-x="44" data-y="9546" data-size="43">contigo.</span>
+        <span class="at sans bottom-meta" data-x="47" data-y="10107" data-size="13" data-track="3">ALFREDO · 75 AÑOS · 14 NOVIEMBRE 2026</span>
+      </div>
+
+      <div id="map-view" class="map-view" data-x="45" data-y="3892" data-w="690" data-h="350">
+        <iframe title="Mapa real de Glück Salón de Eventos en Tuxtla Gutiérrez" data-src="https://www.google.com/maps?q=Gl%C3%BCck%20Sal%C3%B3n%20de%20Eventos%2C%20Cipr%C3%A9s%20585%2C%20Mactumatza%2C%2029057%20Tuxtla%20Guti%C3%A9rrez%2C%20Chiapas%2C%20M%C3%A9xico&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <a id="maps-link" class="hotspot map-hotspot" data-x="52" data-y="3795" data-w="310" data-h="90" target="_blank" rel="noopener noreferrer" aria-label="Abrir Glück Salón de Eventos en Google Maps"></a>
+      <button id="calendar-button" class="hotspot calendar-hotspot" data-x="48" data-y="2731" data-w="312" data-h="112" type="button" aria-label="Añadir 75 años de Alfredo al calendario">
+        <span class="visually-hidden">Añadir 75 años de Alfredo al calendario</span>
+      </button>
+      <a id="whatsapp-link" class="hotspot whatsapp-hotspot" data-x="44" data-y="8522" data-w="357" data-h="105" target="_blank" rel="noopener noreferrer" aria-label="Confirmar asistencia por WhatsApp"></a>
+
+      <div class="paper-peel paper-peel--portrait" data-peel="portrait" aria-hidden="true"></div>
+      <div class="paper-peel paper-peel--attire" data-peel="attire" aria-hidden="true"></div>
+      <div class="paper-peel paper-peel--music" data-peel="music" aria-hidden="true"></div>
+
+      <div class="semantic-content visually-hidden">
+        <h1 id="event-title" tabindex="-1">Mis 75 años · Alfredo</h1>
+        <section aria-labelledby="semantic-date">
+          <h2 id="semantic-date">Fecha y hora</h2>
+          <p>Sábado 14 de noviembre de 2026 a las 6:00 p. m., hora de America/Mexico_City.</p>
+          <p>Faltan <span id="countdown-words" aria-live="polite">—</span> para la celebración.</p>
+        </section>
+        <section aria-labelledby="semantic-place">
+          <h2 id="semantic-place">Lugar</h2>
+          <p>Glück Salón de Eventos, Ciprés 585, Mactumatza, 29057 Tuxtla Gutiérrez, Chiapas, México.</p>
+        </section>
+        <section aria-labelledby="semantic-attire">
+          <h2 id="semantic-attire">Vestimenta</h2>
+          <p>Casual elegante. Ven como te sientas bien.</p>
+        </section>
+        <section aria-labelledby="semantic-gifts">
+          <h2 id="semantic-gifts">Regalos</h2>
+          <p>Tu presencia es lo más importante para mí. No hace falta que me traigas un regalo. Si deseas tener un detalle en efectivo, habrá un buzón en la entrada.</p>
+        </section>
+        <section aria-labelledby="semantic-rsvp">
+          <h2 id="semantic-rsvp">Confirmación</h2>
+          <p>Confirma antes del 1 de noviembre de 2026 al +52 961 307 0923 por WhatsApp.</p>
+        </section>
+        <p>Será un honor compartir esta noche contigo.</p>
+      </div>
+    </main>
+
+    <audio id="event-song" preload="none" loop src="./assets/audio/Piero - Mi Viejo - 1970 ® 4K.mp3"></audio>
+    <button id="music-toggle" class="music-toggle" type="button" aria-label="Pausar música" aria-pressed="true" hidden>
+      <span class="sound-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="visually-hidden" id="music-label">Pausar música</span>
+    </button>
+    <p id="audio-status" class="audio-status" aria-live="polite" hidden></p>
+  </body>
+</html>
