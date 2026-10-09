@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 390 6840" width="390" height="6840" role="img" aria-labelledby="title desc">
+  <title id="title">Master visual · Mis 75 años · Alfredo</title>
+  <desc id="desc">Invitación editorial vertical en azul marino, marfil y ocre. Cinco fotografías reales adjuntas de Alfredo aparecen en escalas narrativas distintas.</desc>
+  <defs>
+    <style>
+      .serif{font-family:Georgia,serif}
+      .sans{font-family:Arial,sans-serif}
+      .italic{font-family:Georgia,serif;font-style:italic}
+      .micro{font-family:Arial,sans-serif;font-size:11px;letter-spacing:2px}
+      .label{font-family:Arial,sans-serif;font-size:13px;letter-spacing:2.4px}
+      .ink{fill:#172B40}
+      .paper{fill:#F2EBDD}
+      .gold{fill:#B58B55}
+      .light{fill:#F2EBDD}
+    </style>
+    <pattern id="ivory-paper" patternUnits="userSpaceOnUse" width="390" height="585">
+      <image x="0" y="0" width="390" height="585" preserveAspectRatio="none" href="../assets/texture/papel-marfil-web.jpg"/>
+    </pattern>
+    <pattern id="navy-paper" patternUnits="userSpaceOnUse" width="390" height="585">
+      <image x="0" y="0" width="390" height="585" preserveAspectRatio="none" href="../assets/texture/papel-navy-web.jpg"/>
+    </pattern>
+    <linearGradient id="hero-bottom" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#172B40" stop-opacity="0"/>
+      <stop offset="1" stop-color="#172B40" stop-opacity=".42"/>
+    </linearGradient>
+    <linearGradient id="pause-bottom" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#172B40" stop-opacity=".15"/>
+      <stop offset="1" stop-color="#172B40" stop-opacity=".48"/>
+    </linearGradient>
+    <filter id="print-shadow" x="-20%" y="-15%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="7" result="blur"/>
+      <feOffset dy="7" result="offset"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".22"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="hero-mask"><path d="M0 64H390V875L350 900H0Z"/></clipPath>
+    <clipPath id="pause-mask"><path d="M0 2555L390 2470V3352L350 3380H0Z"/></clipPath>
+    <clipPath id="closing-mask"><rect x="0" y="5860" width="390" height="330"/></clipPath>
+  </defs>
+
+  <!-- Continuous paper ground and color fields. -->
+  <rect width="390" height="6840" fill="url(#ivory-paper)"/>
+  <rect x="0" y="0" width="390" height="900" fill="url(#navy-paper)"/>
+  <rect x="0" y="900" width="390" height="810" fill="url(#navy-paper)"/>
+  <rect x="0" y="1710" width="390" height="910" fill="url(#ivory-paper)"/>
+  <rect x="0" y="2620" width="390" height="760" fill="#172B40"/>
+  <rect x="0" y="3380" width="390" height="780" fill="url(#ivory-paper)"/>
+  <rect x="0" y="4160" width="390" height="920" fill="url(#navy-paper)"/>
+  <rect x="0" y="5080" width="390" height="780" fill="url(#navy-paper)"/>
+  <rect x="0" y="5860" width="390" height="980" fill="url(#ivory-paper)"/>
+
+  <!-- 01 / Cover: Foto 4, one live speaking moment. -->
+  <g clip-path="url(#hero-mask)">
+    <image x="0" y="64" width="390" height="1016" preserveAspectRatio="xMidYMin slice" href="../assets/photos/foto-04.jpg"/>
+    <rect x="0" y="490" width="390" height="270" fill="url(#hero-bottom)"/>
+  </g>
+  <text class="micro gold" x="26" y="37">MIS 75 AÑOS</text>
+  <path d="M26 53H364" stroke="#B58B55" stroke-width=".9"/>
+  <path d="M0 667L390 591V900H0Z" fill="url(#ivory-paper)"/>
+  <path d="M0 667L390 591" stroke="#B58B55" stroke-width="1.2"/>
+  <text class="serif ink" x="27" y="720" font-size="61" letter-spacing="-2.3">Alfredo</text>
+  <text class="label ink" x="30" y="754">75 AÑOS</text>
+  <text class="micro ink" x="30" y="793">SÁBADO · 14 NOVIEMBRE 2026</text>
+  <image href="../assets/graphics/sello-oro-web.png" x="297" y="653" width="70" height="70" preserveAspectRatio="xMidYMid meet"/>
+  <text class="serif paper" x="332" y="697" text-anchor="middle" font-size="24">75</text>
+  <path d="M30 825H360" stroke="#B58B55" stroke-width=".9"/>
+  <text class="micro ink" x="30" y="858">PIERO · MI VIEJO</text>
+  <path d="M0 898L390 879V900H0Z" fill="#B58B55" opacity=".9"/>
+
+  <!-- 02 / Date: the 14 is the anchor; details remain subordinate. -->
+  <text class="micro gold" x="28" y="1004">SÁBADO</text>
+  <text class="serif light" x="14" y="1240" font-size="246" letter-spacing="-14">14</text>
+  <path d="M235 1006V1292" stroke="#B58B55" stroke-width="1.2"/>
+  <text class="label light" x="260" y="1086">NOVIEMBRE</text>
+  <text class="serif light" x="258" y="1150" font-size="43">2026</text>
+  <text class="serif light" x="258" y="1248" font-size="27">6:00 p.m.</text>
+  <path d="M28 1320H362" stroke="#B58B55" stroke-width=".9"/>
+  <text class="micro gold" x="30" y="1375">FALTAN</text>
+  <text class="serif light" x="29" y="1424" font-size="43">36</text>
+  <text class="serif light" x="144" y="1424" font-size="43">04</text>
+  <text class="serif light" x="264" y="1424" font-size="43">40</text>
+  <text class="sans light" x="31" y="1448" font-size="10" letter-spacing="1.5">DÍAS</text>
+  <text class="sans light" x="146" y="1448" font-size="10" letter-spacing="1.5">HORAS</text>
+  <text class="sans light" x="266" y="1448" font-size="10" letter-spacing="1.5">MINUTOS</text>
+  <path d="M28 1473H362" stroke="#B58B55" stroke-width=".55" opacity=".7"/>
+  <text class="label light" x="30" y="1535">AÑADIR AL CALENDARIO</text>
+  <rect x="330" y="1516" width="22" height="20" rx="1" fill="none" stroke="#B58B55" stroke-width="1.1"/>
+  <path d="M330 1523H352M336 1513V1520M346 1513V1520" fill="none" stroke="#B58B55" stroke-width="1.1"/>
+  <path d="M28 1588H362" stroke="#B58B55" stroke-width=".9"/>
+  <text class="micro gold" x="30" y="1632">14 · XI · 2026</text>
+
+  <!-- 03 / Place: typography, one small print, then a real map window. -->
+  <text class="micro gold" x="28" y="1762">LUGAR</text>
+  <text class="serif ink" x="25" y="1842" font-size="58" letter-spacing="-2.3">Glück</text>
+  <text class="label ink" x="30" y="1877">SALÓN DE EVENTOS</text>
+  <text class="sans ink" x="30" y="1935" font-size="16">Ciprés 585, Mactumatza</text>
+  <text class="sans ink" x="30" y="1967" font-size="16">29057 Tuxtla Gutiérrez</text>
+  <text class="sans ink" x="30" y="1999" font-size="16">Chiapas, México</text>
+  <g transform="rotate(2 299 1904)" filter="url(#print-shadow)">
+    <path d="M228 1787H359V2015L348 2024H228Z" fill="#F7F2E8"/>
+    <image x="235" y="1794" width="117" height="220" preserveAspectRatio="xMidYMid slice" href="../assets/photos/foto-02.jpg"/>
+    <path d="M228 2015H348" stroke="#B58B55" stroke-width=".65"/>
+  </g>
+  <text class="micro gold" x="30" y="2055">GLÜCK · TUXTLA GUTIÉRREZ</text>
+  <rect x="18" y="2082" width="354" height="244" fill="#DED9CF"/>
+  <path d="M18 2082H372M18 2326H372" stroke="#B58B55" stroke-width="1.1"/>
+  <text class="micro ink" x="28" y="2366">CÓMO LLEGAR</text>
+  <path d="M147 2358h16m-6-7 7 7-7 7" fill="none" stroke="#B58B55" stroke-width="1"/>
+  <path d="M28 2405H362" stroke="#B58B55" stroke-width=".8"/>
+
+  <!-- 04 / Pause: Foto 5, almost a full viewport, little or no copy. -->
+  <g clip-path="url(#pause-mask)">
+    <image x="0" y="2470" width="390" height="1000" preserveAspectRatio="xMidYMin slice" href="../assets/photos/foto-05.jpg"/>
+    <rect x="0" y="3090" width="390" height="290" fill="url(#pause-bottom)"/>
+  </g>
+  <text class="micro light" x="27" y="2660">ALFREDO · 75</text>
+  <path d="M27 2674H102" stroke="#B58B55" stroke-width=".8"/>
+  <path d="M0 3378H350L390 3352" fill="none" stroke="#B58B55" stroke-width="1.3"/>
+
+  <!-- 05 / Attire: typography in two axes; Foto 7 becomes a print bridge. -->
+  <text class="micro gold" x="28" y="3460">VESTIMENTA</text>
+  <text class="serif ink" x="27" y="3594" font-size="75" letter-spacing="-3.5">CASUAL</text>
+  <text class="serif gold" x="365" y="3682" text-anchor="end" font-size="68" letter-spacing="-3.2">ELEGANTE</text>
+  <text class="sans ink" x="30" y="3775" font-size="18">Ven como te sientas bien.</text>
+  <path d="M28 3800H160" stroke="#B58B55" stroke-width="1.2"/>
+  <g transform="rotate(-2 109 3976)" filter="url(#print-shadow)">
+    <path d="M22 3826H196V4207H22Z" fill="#F7F2E8"/>
+    <image x="28" y="3832" width="162" height="369" preserveAspectRatio="xMidYMin slice" href="../assets/photos/foto-07.jpg"/>
+    <path d="M28 4201H190" stroke="#B58B55" stroke-width=".6"/>
+  </g>
+  <text class="micro gold" x="219" y="4006">ALFREDO</text>
+  <text class="serif ink" x="215" y="4060" font-size="31">75</text>
+  <path d="M219 4080H360" stroke="#B58B55" stroke-width=".8"/>
+
+  <!-- 06 / Gifts: an actual folded letter held by the same seal. -->
+  <path d="M42 4250H342L362 4270V4982H42Z" fill="url(#ivory-paper)" filter="url(#print-shadow)"/>
+  <path d="M342 4250V4270H362" fill="#DED4C2" stroke="#B58B55" stroke-width=".8"/>
+  <image href="../assets/graphics/sello-oro-web.png" x="296" y="4274" width="53" height="53" preserveAspectRatio="xMidYMid meet"/>
+  <text class="serif paper" x="322" y="4307" text-anchor="middle" font-size="18">75</text>
+  <text class="micro gold" x="64" y="4354">REGALOS</text>
+  <text class="serif ink" x="63" y="4440" font-size="29">Tu presencia es lo más</text>
+  <text class="serif ink" x="63" y="4478" font-size="29">importante para mí.</text>
+  <path d="M64 4510H328" stroke="#B58B55" stroke-width=".8"/>
+  <text class="sans ink" x="64" y="4570" font-size="17">No hace falta que me</text>
+  <text class="sans ink" x="64" y="4603" font-size="17">traigas un regalo.</text>
+  <text class="sans ink" x="64" y="4656" font-size="17">Si deseas tener un detalle</text>
+  <text class="sans ink" x="64" y="4689" font-size="17">conmigo, habrá un buzón</text>
+  <text class="sans ink" x="64" y="4722" font-size="17">en la entrada.</text>
+  <path d="M64 4790H328" stroke="#B58B55" stroke-width=".8"/>
+  <path d="M42 4982L362 4964V5080H42Z" fill="#172B40"/>
+  <path d="M42 4982L362 4964" stroke="#B58B55" stroke-width="1"/>
+
+  <!-- 07 / RSVP: invitation and response form one ceremonial field. -->
+  <text class="micro gold" x="28" y="5160">CONFIRMACIÓN</text>
+  <text class="serif light" x="27" y="5252" font-size="35">Confirma antes del</text>
+  <text class="serif light" x="27" y="5298" font-size="35">1 de noviembre de 2026.</text>
+  <path d="M28 5332H362" stroke="#B58B55" stroke-width=".9"/>
+  <path d="M24 5384H366V5498H24Z" fill="url(#ivory-paper)"/>
+  <circle cx="62" cy="5441" r="21" fill="#1D9A6C"/>
+  <path d="M53 5440c0-5 4-9 9-9s9 4 9 9-4 9-9 9c-2 0-3-.5-5-1.3l-4 1.3 1.5-4c-.9-1.5-1.5-3-1.5-5z" fill="none" stroke="#FFF" stroke-width="1.6" stroke-linejoin="round"/>
+  <text class="micro ink" x="100" y="5435">CONFIRMAR POR</text>
+  <text class="serif ink" x="99" y="5474" font-size="28">WhatsApp ↗</text>
+  <text class="sans light" x="28" y="5562" font-size="19">+52 961 307 0923</text>
+  <text class="micro gold" x="28" y="5634">HOLA, CONFIRMO MI ASISTENCIA</text>
+  <text class="micro gold" x="28" y="5660">A LOS 75 AÑOS DE ALFREDO.</text>
+  <path d="M28 5712H362" stroke="#B58B55" stroke-width=".9"/>
+  <text class="micro light" x="28" y="5760">PIERO · MI VIEJO</text>
+
+  <!-- 08 / Close: Foto 8 in its wide format; paper returns to the envelope. -->
+  <g clip-path="url(#closing-mask)">
+    <image x="0" y="5860" width="390" height="330" preserveAspectRatio="xMidYMid slice" href="../assets/photos/foto-08.jpg"/>
+  </g>
+  <path d="M0 6140L390 6113V6840H0Z" fill="url(#ivory-paper)"/>
+  <path d="M0 6140L390 6113" stroke="#B58B55" stroke-width="1.2"/>
+  <text class="serif ink" x="27" y="6290" font-size="31">Será un honor compartir</text>
+  <text class="serif ink" x="27" y="6334" font-size="31">esta noche contigo.</text>
+  <path d="M28 6370H362" stroke="#B58B55" stroke-width=".8"/>
+  <text class="micro gold" x="28" y="6422">ALFREDO · 75</text>
+  <text class="micro ink" x="362" y="6422" text-anchor="end">14 · XI · 2026</text>
+  <path d="M0 6490H390V6840H0Z" fill="url(#navy-paper)"/>
+  <path d="M0 6490L195 6642L390 6490" fill="none" stroke="#B58B55" stroke-width="1.1"/>
+  <image href="../assets/graphics/sello-oro-web.png" x="165" y="6574" width="60" height="60" preserveAspectRatio="xMidYMid meet"/>
+  <text class="serif paper" x="195" y="6611" text-anchor="middle" font-size="21">75</text>
+  <text class="micro light" x="195" y="6717" text-anchor="middle">MIS 75 AÑOS</text>
+  <path d="M125 6741H265" stroke="#B58B55" stroke-width=".8"/>
+</svg>

@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844">
-  <defs>
-    <linearGradient id="flap" x1="0" y1="0" x2=".9" y2="1">
-      <stop offset="0" stop-color="#F4EEE2"/><stop offset="1" stop-color="#DCCDB5"/>
-    </linearGradient>
-  </defs>
-  <path d="M24 159L195 363 366 159Z" fill="url(#flap)"/>
-  <path d="M24 159L195 363 366 159" fill="none" stroke="#B78D62" stroke-width=".9" opacity=".65"/>
-</svg>

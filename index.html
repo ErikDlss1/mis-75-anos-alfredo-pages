@@ -1,89 +1,77 @@
 <!doctype html>
 <html lang="es-MX">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#29352f">
-    <meta name="description" content="Invitación a los 75 años de Alfredo, el sábado 14 de noviembre de 2026 en Glück Salón de Eventos.">
-    <title>Mis 75 años · Alfredo</title>
-    <link rel="preload" as="image" href="./assets/graphics/apertura-fondo.svg?v=20261009-v2" type="image/svg+xml">
-    <link rel="preload" as="image" href="./design/master-nueva.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="./styles.css?v=20261009-v2">
-    <script src="./script.js?v=20261009-v2" defer></script>
-  </head>
-  <body class="is-closed">
-    <div id="opening" class="opening" role="dialog" aria-modal="true" aria-label="Invitación cerrada">
-      <div class="opening-artboard">
-        <img class="opening-layer opening-background" src="./assets/graphics/apertura-fondo.svg?v=20261009-v2" alt="" aria-hidden="true">
-        <img class="opening-layer envelope-body" src="./assets/graphics/sobre-cuerpo.svg?v=20261009-v2" alt="" aria-hidden="true">
-        <img class="opening-layer envelope-flap" src="./assets/graphics/sobre-solapa.svg?v=20261009-v2" alt="" aria-hidden="true">
-        <img class="opening-layer envelope-seal" src="./assets/graphics/sobre-sello.svg?v=20261009-v2" alt="" aria-hidden="true">
-        <button id="open-invitation" class="open-target" type="button" aria-label="Abrir la invitación y comenzar la música">
-          <span class="visually-hidden">Abrir la invitación y comenzar la música</span>
-        </button>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#172B40">
+  <meta name="description" content="Invitación a los 75 años de Alfredo, el sábado 14 de noviembre de 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mis 75 años · Alfredo">
+  <meta property="og:description" content="Sábado 14 de noviembre de 2026 · 6:00 p. m. · Glück Salón de Eventos">
+  <meta property="og:image" content="https://erikdlss1.github.io/mis-75-anos-alfredo-pages/assets/photos/foto-04.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Alfredo con traje, sosteniendo un micrófono y una hoja">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Mis 75 años · Alfredo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="locked">
+  <section class="opening" id="opening" aria-label="Sobre de la invitación">
+    <button class="opening-button" id="openInvitation" type="button" aria-label="Abrir la invitación de Alfredo">
+      <object class="envelope-art" id="envelopeArt" data="design/sobre-cerrado.svg" type="image/svg+xml" aria-hidden="true">
+        <span>Alfredo · 75 años</span>
+      </object>
+    </button>
+  </section>
+
+  <main class="invitation" id="invitation" hidden tabindex="-1" aria-labelledby="event-title">
+    <h1 class="sr-only" id="event-title">Mis 75 años · Alfredo</h1>
+    <div class="artboard" id="artboard">
+      <object class="master-art" id="masterArt" data="design/master-runtime.svg" type="image/svg+xml" aria-label="Invitación vertical ilustrada para celebrar los 75 años de Alfredo">
+        <p>Alfredo cumple 75 años. Sábado 14 de noviembre de 2026, a las 6:00 p. m. en Glück Salón de Eventos, Ciprés 585, Mactumatza, Tuxtla Gutiérrez, Chiapas.</p>
+      </object>
+
+      <div class="live-map" id="liveMap" aria-label="Mapa real de Glück Salón de Eventos">
+        <iframe id="mapFrame" title="Mapa de Glück Salón de Eventos, Mactumatza, Tuxtla Gutiérrez" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
+
+      <div class="countdown-live" id="countdown" role="timer" aria-label="Cuenta regresiva para el cumpleaños de Alfredo" aria-live="off">
+        <span data-count="days">36</span>
+        <span data-count="hours">04</span>
+        <span data-count="minutes">40</span>
+      </div>
+
+      <a class="hotspot calendar-action" id="calendarAction" href="assets/75-anios-de-alfredo.ics" download="75-anios-de-alfredo.ics" aria-label="Agregar 75 años de Alfredo al calendario"></a>
+      <a class="hotspot maps-action" id="mapsAction" href="https://www.google.com/maps/search/?api=1&amp;query=Gl%C3%BCck%20Sal%C3%B3n%20de%20Eventos%2C%20Cipr%C3%A9s%20585%2C%20Mactumatza%2C%2029057%20Tuxtla%20Guti%C3%A9rrez%2C%20Chiapas%2C%20M%C3%A9xico" target="_blank" rel="noopener noreferrer" aria-label="Abrir indicaciones a Glück Salón de Eventos en Google Maps"></a>
+      <a class="hotspot rsvp-action" id="rsvpAction" href="https://wa.me/529613070923?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%2075%20a%C3%B1os%20de%20Alfredo." target="_blank" rel="noopener noreferrer" aria-label="Confirmar por WhatsApp al +52 961 307 0923"></a>
+      <button class="music-action" id="musicAction" type="button" aria-label="Pausar música: Mi Viejo" aria-pressed="true">
+        <svg class="music-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="pause-shape" d="M8 5v14M16 5v14"/><path class="play-shape" d="m8 5 11 7-11 7z"/></svg>
+      </button>
+      <span id="calendarStatus" class="sr-only" aria-live="polite"></span>
+
+      <span class="motion-trigger trigger-place" data-motion="photo-place" aria-hidden="true"></span>
+      <span class="motion-trigger trigger-pause" data-motion="pause-photo" aria-hidden="true"></span>
+      <span class="motion-trigger trigger-gift" data-motion="gift-letter" aria-hidden="true"></span>
+      <span class="motion-trigger trigger-close" data-motion="closing-paper" aria-hidden="true"></span>
     </div>
 
-    <main id="invitation" class="invitation" aria-hidden="true" inert>
-      <h1 id="event-title" class="visually-hidden" tabindex="-1">Mis 75 años · Alfredo</h1>
-      <div class="artboard">
-        <img class="master-art" src="./design/master-nueva.svg" alt="" aria-hidden="true" fetchpriority="high">
-        <button id="music-toggle" class="music-toggle" type="button" aria-label="Pausar música" aria-pressed="true" hidden>
-          <span class="sound-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span id="music-label" class="visually-hidden">Pausar música</span>
-        </button>
-        <div class="paper-reveal paper-reveal--pause" data-reveal="pause" aria-hidden="true"></div>
-        <div class="paper-reveal paper-reveal--closing" data-reveal="closing" aria-hidden="true"></div>
+    <section class="sr-only" aria-label="Información de la invitación">
+      <h2>Celebración</h2>
+      <p>Alfredo celebra 75 años. Sábado 14 de noviembre de 2026 a las 6:00 p. m.</p>
+      <h2>Lugar</h2>
+      <p>Glück Salón de Eventos, Ciprés 585, Mactumatza, 29057 Tuxtla Gutiérrez, Chiapas, México.</p>
+      <h2>Vestimenta</h2>
+      <p>Casual elegante. Ven como te sientas bien.</p>
+      <h2>Regalos</h2>
+      <p>Tu presencia es lo más importante para mí. No hace falta que me traigas un regalo. Si deseas tener un detalle conmigo, habrá un buzón en la entrada.</p>
+      <h2>Confirmación</h2>
+      <p>Confirma antes del 1 de noviembre de 2026 por WhatsApp al +52 961 307 0923.</p>
+      <h2>Cierre</h2>
+      <p>Será un honor compartir esta noche contigo.</p>
+    </section>
+  </main>
 
-        <div class="countdown-values" aria-hidden="true">
-          <span id="days">—</span>
-          <span id="hours">—</span>
-          <span id="minutes">—</span>
-        </div>
-
-        <iframe
-          id="venue-map"
-          class="map-frame"
-          title="Mapa real de Glück Salón de Eventos en Tuxtla Gutiérrez"
-          data-src="https://www.google.com/maps?q=Gl%C3%BCck%20Sal%C3%B3n%20de%20Eventos%2C%20Cipr%C3%A9s%20585%2C%20Mactumatza%2C%2029057%20Tuxtla%20Guti%C3%A9rrez%2C%20Chiapas%2C%20M%C3%A9xico&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-        <button id="calendar-button" class="hotspot calendar-hotspot" type="button" aria-label="Añadir 75 años de Alfredo al calendario"></button>
-        <a id="maps-link" class="hotspot maps-hotspot" target="_blank" rel="noopener noreferrer" aria-label="Abrir Glück Salón de Eventos en Google Maps"></a>
-        <a id="whatsapp-link" class="hotspot whatsapp-hotspot" target="_blank" rel="noopener noreferrer" aria-label="Confirmar asistencia por WhatsApp al +52 961 307 0923"></a>
-
-        <div id="countdown-label" class="visually-hidden" role="timer" aria-live="off">Faltan — para la celebración.</div>
-      </div>
-
-      <div class="visually-hidden">
-        <section aria-labelledby="event-date-heading">
-          <h2 id="event-date-heading">Fecha y hora</h2>
-          <p>Sábado 14 de noviembre de 2026 a las 6:00 p. m., hora de America/Mexico_City.</p>
-          <p id="countdown-words">Cuenta regresiva para la celebración.</p>
-        </section>
-        <section aria-labelledby="event-place-heading">
-          <h2 id="event-place-heading">Lugar</h2>
-          <p>Glück Salón de Eventos, Ciprés 585, Mactumatza, 29057 Tuxtla Gutiérrez, Chiapas, México.</p>
-        </section>
-        <section aria-labelledby="event-attire-heading">
-          <h2 id="event-attire-heading">Vestimenta</h2>
-          <p>Casual elegante. Ven como te sientas bien.</p>
-        </section>
-        <section aria-labelledby="event-gifts-heading">
-          <h2 id="event-gifts-heading">Regalos</h2>
-          <p>Tu presencia es lo más importante para mí. No hace falta que me traigas un regalo. Si deseas tener un detalle en efectivo, habrá un buzón en la entrada.</p>
-        </section>
-        <section aria-labelledby="event-rsvp-heading">
-          <h2 id="event-rsvp-heading">Confirmación</h2>
-          <p>Confirma antes del 1 de noviembre de 2026 al +52 961 307 0923 por WhatsApp.</p>
-          <p>La música comienza al abrir la invitación: Piero, Mi Viejo.</p>
-        </section>
-        <p>Será un honor compartir esta noche contigo.</p>
-      </div>
-    </main>
-
-    <p id="audio-status" class="audio-status" role="status" aria-live="polite" hidden></p>
-    <audio id="event-song" preload="none" src="./assets/audio/piero-mi-viejo.mp3?v=20261009-v2"></audio>
-  </body>
+  <audio id="eventMusic" src="assets/audio/piero-mi-viejo.mp3" preload="none" loop playsinline></audio>
+</body>
 </html>

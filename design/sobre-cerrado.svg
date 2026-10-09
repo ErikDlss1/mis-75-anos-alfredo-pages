@@ -1,67 +1,56 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844" role="img" aria-labelledby="title desc">
-  <title id="title">Sobre cerrado · Mis 75 años · Alfredo</title>
-  <desc id="desc">Sobre de papel marfil con sello vino y la invitación de Alfredo impresa al frente.</desc>
+  <title id="title">Sobre cerrado · Alfredo · 75 años</title>
+  <desc id="desc">Sobre marfil con solapa azul marino y sello ocre, sobre papel azul texturizado.</desc>
   <defs>
-    <linearGradient id="night" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#344139"/>
-      <stop offset="1" stop-color="#202d27"/>
-    </linearGradient>
-    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#F5F0E6"/>
-      <stop offset=".5" stop-color="#EFE8DA"/>
-      <stop offset="1" stop-color="#E3D8C5"/>
-    </linearGradient>
-    <linearGradient id="flap" x1="0" y1="0" x2=".9" y2="1">
-      <stop offset="0" stop-color="#F4EEE2"/>
-      <stop offset="1" stop-color="#DCCDB5"/>
-    </linearGradient>
-    <radialGradient id="seal" cx="36%" cy="28%" r="80%">
-      <stop offset="0" stop-color="#A26158"/>
-      <stop offset="1" stop-color="#733D38"/>
-    </radialGradient>
-    <filter id="envelope-shadow" x="-12%" y="-12%" width="124%" height="130%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur"/>
-      <feOffset dy="11" result="offset"/>
-      <feComponentTransfer><feFuncA type="linear" slope=".24"/></feComponentTransfer>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <pattern id="paper-fiber" width="34" height="47" patternUnits="userSpaceOnUse">
-      <path d="M4 9h5M18 5h3M8 28h8M26 39h4M19 44h4" stroke="#8B795E" stroke-width=".5" opacity=".16"/>
-      <circle cx="27" cy="17" r=".55" fill="#8B795E" opacity=".14"/>
-      <circle cx="6" cy="39" r=".5" fill="#8B795E" opacity=".12"/>
-    </pattern>
+    <pattern id="navy-paper" patternUnits="userSpaceOnUse" width="390" height="585"><image x="0" y="0" width="390" height="585" preserveAspectRatio="none" href="../assets/texture/papel-navy-web.jpg"/></pattern>
+    <pattern id="ivory-paper" patternUnits="userSpaceOnUse" width="390" height="585"><image x="0" y="0" width="390" height="585" preserveAspectRatio="none" href="../assets/texture/papel-marfil-web.jpg"/></pattern>
+    <filter id="envelope-shadow" x="-15%" y="-15%" width="130%" height="140%"><feGaussianBlur in="SourceAlpha" stdDeviation="9"/><feOffset dy="9" result="offset"/><feComponentTransfer><feFuncA type="linear" slope=".28"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="flap-edge" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#243A50"/><stop offset="1" stop-color="#132538"/></linearGradient>
+    <style>
+      #top-flap{transform-box:fill-box;transform-origin:50% 0%;transition:transform .72s cubic-bezier(.2,.8,.2,1)}
+      svg.is-opening #top-flap{transform:perspective(900px) rotateX(165deg)}
+      #wax-seal{transform-box:fill-box;transform-origin:center;transition:opacity .24s ease,transform .36s ease}
+      svg.is-opening #wax-seal{opacity:0;transform:translateY(-18px) scale(.82)}
+      #letter-card{opacity:0;transform:translateY(150px) scale(.92);transform-box:fill-box;transform-origin:center;transition:opacity .45s ease .36s,transform .76s cubic-bezier(.2,.72,.24,1) .36s}
+      svg.is-opening #letter-card{opacity:1;transform:translateY(-170px) scale(1.02)}
+      #opening-prompt{transition:opacity .18s ease}
+      svg.is-opening #opening-prompt{opacity:0}
+      @media (prefers-reduced-motion:reduce){#top-flap,#wax-seal,#letter-card,#opening-prompt{transition-duration:.01ms!important;transition-delay:0ms!important}}
+    </style>
   </defs>
-  <rect width="390" height="844" fill="url(#night)"/>
-  <rect x="13" y="13" width="364" height="818" fill="none" stroke="#B78D62" stroke-width=".7" opacity=".42"/>
-  <path d="M24 139H366" stroke="#B78D62" stroke-width=".7" opacity=".5"/>
-  <text x="195" y="116" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" letter-spacing="2.6" fill="#E4D5BE">ALFREDO · 75</text>
+  <rect width="390" height="844" fill="url(#navy-paper)"/>
+  <path d="M24 46H366M24 798H366" stroke="#B58B55" stroke-width=".8" opacity=".8"/>
+  <text x="195" y="88" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" letter-spacing="3" fill="#B58B55">MIS 75 AÑOS</text>
+  <text x="195" y="166" text-anchor="middle" font-family="Georgia,serif" font-size="54" letter-spacing="-1.5" fill="#F2EBDD">Alfredo</text>
+  <path d="M160 188H230" stroke="#B58B55" stroke-width="1"/>
+  <text x="195" y="220" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" letter-spacing="2.5" fill="#F2EBDD">75 AÑOS</text>
 
-  <g id="envelope" filter="url(#envelope-shadow)">
-    <rect x="24" y="159" width="342" height="536" fill="#D8CAB3"/>
-    <path d="M24 159L195 363 24 570Z" fill="#E1D4BE"/>
-    <path d="M366 159L195 363 366 570Z" fill="#F0E8D9"/>
-    <path d="M24 695L195 478 366 695Z" fill="#D4C3A8"/>
-    <path d="M24 335L195 469 366 335V695H24Z" fill="url(#paper)"/>
-    <path d="M24 159L195 363 366 159Z" fill="url(#flap)"/>
-    <path d="M24 159L195 363 366 159" fill="none" stroke="#B78D62" stroke-width=".9" opacity=".65"/>
-    <path d="M24 335L195 469 366 335" fill="none" stroke="#8D785C" stroke-width=".8" opacity=".52"/>
-    <path d="M24 159L195 363 366 159L366 695L24 695Z" fill="url(#paper-fiber)" opacity=".5"/>
-
-    <g id="wax-seal">
-      <circle cx="195" cy="363" r="35" fill="#693A35" opacity=".4"/>
-      <circle cx="195" cy="357" r="33" fill="url(#seal)" stroke="#B78D62" stroke-width="1"/>
-      <circle cx="195" cy="357" r="25" fill="none" stroke="#D9B393" stroke-width=".7" opacity=".8"/>
-      <text x="195" y="366" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#F2E5D4">75</text>
-    </g>
-
-    <g id="envelope-lettering">
-      <text x="195" y="505" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" letter-spacing="2.4" fill="#80473F">MIS 75 AÑOS</text>
-      <text x="195" y="557" text-anchor="middle" font-family="Georgia,serif" font-size="42" letter-spacing="-1.2" fill="#29352F">Alfredo</text>
-      <path d="M113 576H277" stroke="#B78D62" stroke-width=".8"/>
-      <text x="195" y="608" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.4" fill="#5A6257">SÁBADO 14 NOVIEMBRE 2026</text>
+  <g filter="url(#envelope-shadow)">
+    <path d="M40 292H350V503L195 592L40 503Z" fill="url(#ivory-paper)" stroke="#C6A676" stroke-width=".8"/>
+    <path d="M40 292L195 438L40 503Z" fill="#E7DFD1"/>
+    <path d="M350 292L195 438L350 503Z" fill="#E9E1D4"/>
+    <path d="M40 503L195 415L350 503L195 592Z" fill="url(#ivory-paper)" stroke="#C6A676" stroke-width=".75"/>
+    <g id="top-flap">
+      <path d="M40 292L195 438L350 292Z" fill="url(#flap-edge)" stroke="#B58B55" stroke-width="1.2"/>
+      <path d="M54 302L195 433L336 302" fill="none" stroke="#B58B55" stroke-width=".55" opacity=".82"/>
+      <g id="wax-seal">
+        <image href="../assets/graphics/sello-oro-web.png" x="158" y="399" width="74" height="74" preserveAspectRatio="xMidYMid meet"/>
+        <text x="195" y="445" text-anchor="middle" font-family="Georgia,serif" font-size="23" fill="#F2EBDD">75</text>
+      </g>
     </g>
   </g>
 
-  <path d="M159 758H231" stroke="#B78D62" stroke-width="1"/>
-  <text x="195" y="788" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" letter-spacing="2" fill="#F2EEE3">TOCA PARA ABRIR</text>
+  <g id="letter-card" filter="url(#envelope-shadow)">
+    <path d="M68 232H322V608L195 650L68 608Z" fill="url(#ivory-paper)" stroke="#B58B55" stroke-width=".9"/>
+    <image href="../assets/photos/foto-04.jpg" x="82" y="246" width="226" height="220" preserveAspectRatio="xMidYMin slice"/>
+    <text x="195" y="506" text-anchor="middle" font-family="Georgia,serif" font-size="38" fill="#172B40">Alfredo</text>
+    <text x="195" y="540" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" letter-spacing="2.2" fill="#B58B55">75 AÑOS</text>
+    <text x="195" y="574" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.2" fill="#172B40">14 NOVIEMBRE 2026</text>
+  </g>
+
+  <g id="opening-prompt">
+    <path d="M128 650H169M221 650H262" stroke="#B58B55" stroke-width=".7" opacity=".8"/>
+    <text x="195" y="654" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" letter-spacing="2.4" fill="#F2EBDD">TOCA PARA ABRIR</text>
+  </g>
+  <text x="195" y="742" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.6" fill="#C7B99F">SÁBADO · 14 NOVIEMBRE 2026</text>
 </svg>
