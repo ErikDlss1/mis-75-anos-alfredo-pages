@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F5F0E6"/><stop offset=".5" stop-color="#EFE8DA"/><stop offset="1" stop-color="#E3D8C5"/>
+    </linearGradient>
+    <pattern id="paper-fiber" width="34" height="47" patternUnits="userSpaceOnUse">
+      <path d="M4 9h5M18 5h3M8 28h8M26 39h4M19 44h4" stroke="#8B795E" stroke-width=".5" opacity=".16"/>
+      <circle cx="27" cy="17" r=".55" fill="#8B795E" opacity=".14"/><circle cx="6" cy="39" r=".5" fill="#8B795E" opacity=".12"/>
+    </pattern>
+  </defs>
+  <g>
+    <rect x="24" y="159" width="342" height="536" fill="#D8CAB3"/>
+    <path d="M24 159L195 363 24 570Z" fill="#E1D4BE"/>
+    <path d="M366 159L195 363 366 570Z" fill="#F0E8D9"/>
+    <path d="M24 695L195 478 366 695Z" fill="#D4C3A8"/>
+    <path d="M24 335L195 469 366 335V695H24Z" fill="url(#paper)"/>
+    <path d="M24 335L195 469 366 335" fill="none" stroke="#8D785C" stroke-width=".8" opacity=".52"/>
+    <path d="M24 159L195 363 366 159L366 695L24 695Z" fill="url(#paper-fiber)" opacity=".5"/>
+  </g>
+  <g id="envelope-lettering">
+    <text x="195" y="505" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" letter-spacing="2.4" fill="#80473F">MIS 75 AÑOS</text>
+    <text x="195" y="557" text-anchor="middle" font-family="Georgia,serif" font-size="42" letter-spacing="-1.2" fill="#29352F">Alfredo</text>
+    <path d="M113 576H277" stroke="#B78D62" stroke-width=".8"/>
+    <text x="195" y="608" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.4" fill="#5A6257">SÁBADO 14 NOVIEMBRE 2026</text>
+  </g>
+</svg>

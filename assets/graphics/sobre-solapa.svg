@@ -1,7 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 780 1688" aria-hidden="true">
-  <g transform="rotate(-1.2 390 934)">
-    <path d="M71 565 390 823 709 565v138L390 1020 71 703Z" fill="#f8efdf"/>
-    <path d="M71 565 390 823 709 565" fill="none" stroke="#c9ad8d" stroke-width="2" opacity=".75"/>
-    <path d="M71 703 390 1020 709 703" fill="none" stroke="#d2b898" stroke-width="2" opacity=".65"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844">
+  <defs>
+    <linearGradient id="flap" x1="0" y1="0" x2=".9" y2="1">
+      <stop offset="0" stop-color="#F4EEE2"/><stop offset="1" stop-color="#DCCDB5"/>
+    </linearGradient>
+  </defs>
+  <path d="M24 159L195 363 366 159Z" fill="url(#flap)"/>
+  <path d="M24 159L195 363 366 159" fill="none" stroke="#B78D62" stroke-width=".9" opacity=".65"/>
 </svg>
