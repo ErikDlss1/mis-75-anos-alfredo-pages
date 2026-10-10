@@ -1,164 +1,187 @@
 (() => {
-  const event = {
-    title: '75 años de Alfredo',
-    timeZone: 'America/Mexico_City',
-    local: { year: 2026, month: 11, day: 14, hour: 18, minute: 0, second: 0 },
-    address: 'Glück Salón de Eventos, Ciprés 585, Mactumatza, 29057 Tuxtla Gutiérrez, Chiapas, México',
-    phone: '529613070923',
-    confirmation: 'Hola, confirmo mi asistencia a los 75 años de Alfredo.',
-  };
+  "use strict";
 
-  const opening = document.getElementById('opening');
-  const openButton = document.getElementById('openInvitation');
-  const envelopeArt = document.getElementById('envelopeArt');
-  const invitation = document.getElementById('invitation');
-  const masterArt = document.getElementById('masterArt');
-  const mapFrame = document.getElementById('mapFrame');
-  const music = document.getElementById('eventMusic');
-  const musicButton = document.getElementById('musicAction');
-  const calendarAction = document.getElementById('calendarAction');
-  const calendarStatus = document.getElementById('calendarStatus');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const root = document.documentElement;
+  const opening = document.getElementById("opening");
+  const openButton = document.getElementById("open-envelope");
+  const openingHint = document.getElementById("opening-hint");
+  const music = document.getElementById("event-music");
+  const musicToggle = document.getElementById("music-toggle");
+  const musicStatus = document.getElementById("music-status");
+  const countdown = document.getElementById("countdown");
+  const skipLink = document.querySelector(".skip-link");
+  const openingCard = document.getElementById("opening-card");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const timezone = "America/Mexico_City";
+  root.classList.add("js-locked");
+  window.history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
 
-  const zonedWallTime = (wallTime, timeZone) => {
-    const { year, month, day, hour, minute, second } = wallTime;
-    const formatter = new Intl.DateTimeFormat('en-CA', {
-      timeZone,
-      year: 'numeric', month: '2-digit', day: '2-digit',
-      hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23',
-    });
+  function zonedDateTimeToUtc(year, month, day, hour, minute, second, zone) {
     const desiredAsUtc = Date.UTC(year, month - 1, day, hour, minute, second);
     let instant = desiredAsUtc;
-    for (let pass = 0; pass < 3; pass += 1) {
-      const parts = Object.fromEntries(formatter.formatToParts(new Date(instant)).map(({ type, value }) => [type, value]));
-      const formattedAsUtc = Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day), Number(parts.hour), Number(parts.minute), Number(parts.second));
-      const correction = desiredAsUtc - formattedAsUtc;
-      if (correction === 0) break;
-      instant += correction;
-    }
-    return new Date(instant);
-  };
+    const formatter = new Intl.DateTimeFormat("en-CA", {
+      timeZone: zone,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hourCycle: "h23"
+    });
 
-  const eventInstant = zonedWallTime(event.local, event.timeZone);
-  const pad = (number) => String(number).padStart(2, '0');
-
-  const updateCountdown = () => {
-    const remaining = Math.max(0, eventInstant.getTime() - Date.now());
-    const totalMinutes = Math.floor(remaining / 60_000);
-    const days = Math.floor(totalMinutes / 1_440);
-    const hours = Math.floor((totalMinutes % 1_440) / 60);
-    const minutes = totalMinutes % 60;
-    document.querySelector('[data-count="days"]').textContent = String(days);
-    document.querySelector('[data-count="hours"]').textContent = pad(hours);
-    document.querySelector('[data-count="minutes"]').textContent = pad(minutes);
-    document.getElementById('countdown').setAttribute('aria-label', `Faltan ${days} días, ${hours} horas y ${minutes} minutos`);
-  };
-
-  let mapLoaded = false;
-  const loadMap = () => {
-    if (mapLoaded) return;
-    mapLoaded = true;
-    const mapQuery = encodeURIComponent(event.address);
-    mapFrame.src = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
-  };
-
-  const setMusicState = (playing) => {
-    musicButton.setAttribute('aria-pressed', String(playing));
-    musicButton.setAttribute('aria-label', `${playing ? 'Pausar' : 'Reanudar'} música: Mi Viejo`);
-  };
-  music.volume = 0.32;
-  music.loop = true;
-  music.addEventListener('play', () => setMusicState(true));
-  music.addEventListener('pause', () => setMusicState(false));
-  music.addEventListener('error', () => setMusicState(false));
-
-  const startArtworkMotion = () => {
-    if (masterArt.dataset.motionReady === 'true') return;
-    const svgDoc = masterArt.contentDocument;
-    if (!svgDoc) return;
-    masterArt.dataset.motionReady = 'true';
-
-    for (const id of ['countdown-static-days', 'countdown-static-hours', 'countdown-static-minutes']) {
-      const staticNumber = svgDoc.getElementById(id);
-      if (staticNumber) staticNumber.style.visibility = 'hidden';
-    }
-    if (reducedMotion.matches) return;
-
-    const targets = {
-      'photo-place': { start: 'translateY(14px) rotate(2deg)', opacity: '0.72', duration: '760ms' },
-      'pause-photo': { start: 'translateY(18px) scale(.985)', opacity: '0.86', duration: '920ms' },
-      'gift-letter': { start: 'translateY(16px)', opacity: '0.9', duration: '760ms' },
-      'closing-paper': { start: 'translateY(28px)', opacity: '1', duration: '900ms' },
-    };
-    for (const [id, motion] of Object.entries(targets)) {
-      const target = svgDoc.getElementById(id);
-      if (!target) continue;
-      target.style.transformBox = 'fill-box';
-      target.style.transformOrigin = 'center';
-      target.style.transition = `transform ${motion.duration} cubic-bezier(.2,.72,.24,1), opacity ${motion.duration} ease`;
-      target.style.transform = motion.start;
-      target.style.opacity = motion.opacity;
+    for (let index = 0; index < 4; index += 1) {
+      const parts = Object.fromEntries(
+        formatter.formatToParts(new Date(instant))
+          .filter((part) => part.type !== "literal")
+          .map((part) => [part.type, Number(part.value)])
+      );
+      const actualAsUtc = Date.UTC(
+        parts.year,
+        parts.month - 1,
+        parts.day,
+        parts.hour,
+        parts.minute,
+        parts.second
+      );
+      instant += desiredAsUtc - actualAsUtc;
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        const id = entry.target.dataset.motion;
-        const target = svgDoc.getElementById(id);
-        if (target) {
-          target.style.transform = id === 'photo-place' ? 'translateY(0) rotate(2deg)' : 'translateY(0) scale(1)';
-          target.style.opacity = '1';
-        }
-        observer.unobserve(entry.target);
-      }
-    }, { threshold: 0.01, rootMargin: '0px 0px -10% 0px' });
-    document.querySelectorAll('.motion-trigger').forEach((trigger) => observer.observe(trigger));
-  };
+    return instant;
+  }
 
-  masterArt.addEventListener('load', () => {
-    if (!invitation.hidden) startArtworkMotion();
+  const eventTime = zonedDateTimeToUtc(2026, 11, 14, 18, 0, 0, timezone);
+  let lastCountdownText = "";
+
+  function updateCountdown() {
+    const remainingSeconds = Math.max(0, Math.floor((eventTime - Date.now()) / 1000));
+    const days = Math.floor(remainingSeconds / 86400);
+    const hours = Math.floor((remainingSeconds % 86400) / 3600);
+    const nextText = `FALTAN ${days} DÍAS · ${String(hours).padStart(2, "0")} H`;
+
+    if (nextText !== lastCountdownText) {
+      countdown.textContent = nextText;
+      lastCountdownText = nextText;
+    }
+  }
+
+  updateCountdown();
+  window.setInterval(updateCountdown, 60000);
+
+  function setMusicState(playing) {
+    musicToggle.hidden = false;
+    musicToggle.setAttribute("aria-pressed", String(playing));
+    musicToggle.setAttribute("aria-label", playing ? "Pausar música" : "Reproducir música");
+    musicStatus.textContent = playing ? "La música está reproduciéndose." : "La música está en pausa.";
+  }
+
+  function startMusicFromGesture() {
+    music.loop = true;
+    music.volume = 0.72;
+    const playback = music.play();
+
+    if (playback && typeof playback.then === "function") {
+      playback.then(() => setMusicState(true)).catch(() => {
+        musicStatus.textContent = "No se pudo iniciar la música. Usa el control de música para volver a intentarlo.";
+        musicToggle.hidden = false;
+        musicToggle.setAttribute("aria-label", "Reproducir música");
+        musicToggle.setAttribute("aria-pressed", "false");
+      });
+    } else {
+      setMusicState(true);
+    }
+  }
+
+  music.addEventListener("play", () => setMusicState(true));
+  music.addEventListener("pause", () => setMusicState(false));
+  music.addEventListener("error", () => {
+    musicStatus.textContent = "No se pudo cargar la música.";
   });
 
+  musicToggle.addEventListener("click", () => {
+    if (music.paused) {
+      const playback = music.play();
+      if (playback && typeof playback.catch === "function") {
+        playback.catch(() => {
+          musicStatus.textContent = "No se pudo reanudar la música.";
+        });
+      }
+    } else {
+      music.pause();
+    }
+  });
+
+  const revealScenes = document.querySelectorAll(".scene--history, .scene--memories, .scene--closing");
+  if (reducedMotion.matches || !("IntersectionObserver" in window)) {
+    revealScenes.forEach((scene) => scene.classList.add("is-visible"));
+  } else {
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          const image = entry.target.querySelector("img");
+          if (image && image.loading === "lazy") image.loading = "eager";
+          entry.target.classList.add("is-visible");
+          currentObserver.unobserve(entry.target);
+        }
+      }
+    }, { rootMargin: "120px 0px", threshold: 0.01 });
+
+    revealScenes.forEach((scene) => observer.observe(scene));
+  }
+
   let hasOpened = false;
-  const openInvitation = () => {
+  let skipAfterOpening = false;
+
+  function focusAfterOpening() {
+    opening.setAttribute("aria-hidden", "true");
+    document.getElementById(skipAfterOpening ? "scene-02" : "scene-01")
+      .focus({ preventScroll: true });
+    if (skipAfterOpening) {
+      document.getElementById("scene-02").scrollIntoView({ block: "start", behavior: "auto" });
+    }
+  }
+
+  function openInvitation() {
     if (hasOpened) return;
     hasOpened = true;
     openButton.disabled = true;
+    startMusicFromGesture();
 
-    const envelopeSvg = envelopeArt.contentDocument?.documentElement;
-    if (envelopeSvg) envelopeSvg.classList.add('is-opening');
+    if (reducedMotion.matches) {
+      root.classList.add("is-open", "opening-finished");
+      root.classList.remove("js-locked");
+      if (openingHint) openingHint.textContent = "";
+      window.setTimeout(focusAfterOpening, 40);
+      return;
+    }
 
-    music.currentTime = 0;
-    music.play().catch(() => setMusicState(false));
-    opening.classList.add('is-opening');
-
-    const waitForCard = reducedMotion.matches ? 30 : 930;
-    const closeOpening = reducedMotion.matches ? 180 : 1810;
+    root.classList.add("seal-released");
+    window.setTimeout(() => root.classList.add("envelope-open"), 180);
     window.setTimeout(() => {
-      invitation.hidden = false;
-      document.body.classList.remove('locked');
-      updateCountdown();
-      loadMap();
-      if (masterArt.contentDocument) startArtworkMotion();
-    }, waitForCard);
+      root.classList.add("is-open", "card-emerging");
+      if (openingHint) openingHint.textContent = "";
+    }, 560);
+    window.setTimeout(() => root.classList.add("card-expanded"), 920);
     window.setTimeout(() => {
-      opening.hidden = true;
-      invitation.focus({ preventScroll: true });
-    }, closeOpening);
-  };
-  openButton.addEventListener('click', openInvitation);
+      root.classList.add("opening-finished");
+      root.classList.remove("js-locked");
+    }, 1770);
+    window.setTimeout(focusAfterOpening, 2320);
+  }
 
-  musicButton.addEventListener('click', () => {
-    if (music.paused) music.play().catch(() => setMusicState(false));
-    else music.pause();
+  openButton.addEventListener("click", openInvitation);
+  skipLink.addEventListener("click", (event) => {
+    if (!hasOpened) {
+      event.preventDefault();
+      skipAfterOpening = true;
+      openInvitation();
+    }
   });
 
-  calendarAction.addEventListener('click', () => {
-    calendarAction.classList.add('is-complete');
-    calendarStatus.textContent = 'Evento preparado para agregar al calendario; no se asignó una hora de finalización.';
-    window.setTimeout(() => calendarAction.classList.remove('is-complete'), 650);
+  openingCard.addEventListener("transitionend", (event) => {
+    if (event.propertyName === "width" && root.classList.contains("card-expanded")) {
+      openingCard.setAttribute("aria-hidden", "true");
+    }
   });
-
-  updateCountdown();
-  window.setInterval(updateCountdown, 30_000);
 })();
